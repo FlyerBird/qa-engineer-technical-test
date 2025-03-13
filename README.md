@@ -4,18 +4,18 @@ Este repositorio contiene un test automatizado desarrollado con **Playwright** e
 
 ## 📋 Características
 
-- Framework de automatización basado en **Playwright**
-- Implementación del patrón **Page Object Model (POM)**
-- Separación clara de acciones, aserciones y localizadores
-- Sistema de fixtures para reutilización de código
+- Automatización con **Playwright** usando el patrón **Page Object Model (POM)**
+- Pruebas de carga con **Artillery**
 - Datos de prueba tipados con TypeScript
-- Reportes integrados de Playwright
+- Reportes integrados de Playwright y Artillery
 
 ## 🔧 Requisitos
 
 - **Node.js**: Versión 16.x o superior (recomendado 18.x).
 - **npm** o **pnpm**: Para gestionar las dependencias.
-- **Playwright**: Instalado como dependencia del proyecto.
+- **Playwright** y **Artillery**: Instalados como dependencias.
+- **Sistema operativo**: Windows, macOS o Linux.
+- **Navegadores**: Chromium, Firefox y WebKit (instalados por Playwright).
 
 ## 🚀 Instalación
 
@@ -26,7 +26,7 @@ Este repositorio contiene un test automatizado desarrollado con **Playwright** e
 
 2. Instala las dependecias
     npm install
-    # O si usas pnpm
+    ### O si usas pnpm
     pnpm install
 
 3. Instala los navegadores requeridos por Playwright (Firefox, Chromium, WebKit):
@@ -34,11 +34,11 @@ Este repositorio contiene un test automatizado desarrollado con **Playwright** e
 
 
 ## ▶️ Ejecución de los Tests
-    Corre el test en Chromium, Firefox y WebKit:
-    npx playwright test
+0. Para ejecutar todos los test (Chromium, Firefox y WebKit):
+    npm run pw
 
-1. Para ejecutar en un navegador específico:
-    npx playwright test --project=chromium
+1. Para ejecutar en un navegador específico (e.g., Chromium):
+    npm run pw -- --project=chromium
 
 2. Para ejecutar en modo visual:
     npx playwright test --headed
@@ -48,3 +48,35 @@ Este repositorio contiene un test automatizado desarrollado con **Playwright** e
 
 4. Para generar y abrir el reporte HTML después de la ejecución:
     npx playwright show-report
+
+
+## ⚡ Prueba de Estrés con Artillery (Ejercicio 2)
+
+### Configuración
+La prueba de estrés se configura en `load-test.yml` para evaluar el endpoint `https://jsonplaceholder.typicode.com/posts`:
+- **Duración**: 1 minuto.
+- **Usuarios concurrentes**: 100.
+- **Reporte**: Generado en formato JSON (`report.json`).
+
+### Ejecución
+
+## Ejecutar la prueba de carga:
+npm run load-test
+
+## Generar un reporte JSON:
+npm run load-test-report
+
+
+### Interpretación de los Resultados
+- RPS: 81 (inferior a 100 por errores).
+
+- Latency: 50.9ms (p95), 70.1ms (p99) para solicitudes exitosas.
+
+- Error rate: 62.73% (3764 ETIMEDOUT de 6000).
+
+- Solicitudes exitosas: 2237 (37.28%).
+
+El endpoint es eficiente (bajas latencias), pero la alta tasa de errores sugiere problemas de red local, límites del cliente o rate limiting del servidor. Se recomienda repetir con arrivalRate: 50 o en un entorno mejor.
+
+#### **Notas adicionales**
+El archivo `report.json` no se ha incluido intencionadamente

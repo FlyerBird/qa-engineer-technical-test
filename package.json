@@ -3,12 +3,17 @@
   "version": "1.0.0",
   "description": "Prueba técnica para QA Engineer con automatización, pruebas de carga y CI/CD",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "pw": "playwright test",
+    "load-test": "artillery run load-test.yml",
+    "load-test-report": "artillery run -o report.json load-test.yml"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.51.0",
-    "@types/node": "^22.13.10"
+    "@types/node": "^22.13.10",
+    "artillery": "^2.0.22"
   }
 }

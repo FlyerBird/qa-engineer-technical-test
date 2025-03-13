@@ -1,0 +1,14 @@
+config:
+  target: "https://jsonplaceholder.typicode.com"
+  phases:
+    - duration: 60
+      arrivalRate: 100
+  defaults:
+    headers:
+      Content-Type: "application/json"
+
+scenarios:
+  - name: "Get Posts"
+    flow:
+      - get:
+          url: "/posts"
