@@ -107,3 +107,12 @@ El archivo `report.json` no se ha incluido intencionadamente en el .gitignore
 ## 🧪 Test Plan (Ejercicio 3)
 Se ha creado un plan de pruebas detallado para la funcionalidad de búsqueda avanzada de productos en una tienda online, incluyendo criterios de aceptación en sintaxis Gherkin. Consulta los detalles en `test-plan.md` (./test-plan.md).
 
+---
+
+## 🛠️ Pipeline CI/CD para pruebas (Ejercicio 4)
+Se ha configurado un pipeline de CI/CD con GitHub Actions para automatizar las pruebas:
+- **Playwright Tests**: Ejecuta los tests automatizados (`npm run pw`) y genera un reporte HTML.
+- **Artillery Load Tests**: Ejecuta la prueba de carga (`npm run load-test-report`) y genera un reporte JSON.
+- **Reportes**: Ambos reportes se publican como artefactos en GitHub Actions.
+
+Consulta la configuración en [`.github/workflows/playwright-artillery.yml`](./.github/workflows/playwright-artillery.yml).
