@@ -53,25 +53,25 @@ Este ejercicio contiene un test automatizado con Playwright para la aplicación 
 2. Para ejecutar en un navegador específico (e.g., Chromium):
    ```
     npm run pw -- --project=chromium
-4. Para ejecutar en modo visual:
+3. Para ejecutar en modo visual:
    ```
     npx playwright test --headed
-6. Para ejecutar en modo debug:
+4. Para ejecutar en modo debug:
    ```
     npx playwright test --debug
-8. Para generar y abrir el reporte HTML después de la ejecución:
+5. Para generar y abrir el reporte HTML después de la ejecución:
    ```
     npx playwright show-report
 ## ⚡ Prueba de Estrés con Artillery (Ejercicio 2)
 
-### ℹ️ Configuración
+### 📋 Configuración
 La prueba de estrés se configura en `load-test.yml` para evaluar el endpoint `https://jsonplaceholder.typicode.com/posts`:
 - **Duración**: 1 minuto.
 - **Usuarios concurrentes**: 100.
 - **Reporte**: Generado en formato JSON (`report.json`).
 
 
-### 🔋 Ejecutar la prueba de carga:
+### ▶️ Ejecutar la prueba de carga:
 ```
 npm run load-test
 ```
@@ -99,4 +99,5 @@ El endpoint es eficiente (bajas latencias), pero la alta tasa de errores sugiere
 El archivo `report.json` no se ha incluido intencionadamente en el .gitignore
 
 ## 🧪 Test Plan (Ejercicio 3)
-Se ha creado un plan de pruebas para la funcionalidad de búsqueda avanzada de productos en una tienda online. Consulta los detalles en [`test-plan.md`](./test-plan.md).
+Se ha creado un plan de pruebas detallado para la funcionalidad de búsqueda avanzada de productos en una tienda online, incluyendo criterios de aceptación en sintaxis Gherkin. Consulta los detalles en `test-plan.md` (./test-plan.md).
+
