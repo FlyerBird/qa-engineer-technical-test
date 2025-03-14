@@ -22,52 +22,67 @@ Este repositorio contiene un test automatizado desarrollado con **Playwright** e
 1. Clona el repositorio:
    ```bash
    git clone https://github.com/tu-usuario/qa-engineer-technical-test.git
-   cd qa-engineer-technical-test
 
-2. Instala las dependecias
-    npm install
-    ### O si usas pnpm
+2. Instala las dependecias:
+   ```bash
+   npm install
+   ```
+   O si usas pnpm
+   ```bash
     pnpm install
+   ```
 
 3. Instala los navegadores requeridos por Playwright (Firefox, Chromium, WebKit):
+   ```
     npx playwright install
+   ```
 
+## 🎭 Automatización con Playwright (Ejercicio 1)
+Este ejercicio contiene un test automatizado con Playwright para la aplicación Demo Blaze que realiza las siguientes acciones:
 
-## ▶️ Ejecución de los Tests
-0. Para ejecutar todos los test (Chromium, Firefox y WebKit):
-    npm run pw
+1. Abrir la página de Demo Blaze
+2. Agregar un producto al carrito
+3. Verificar la presencia del producto en el carrito
+4. Completar la compra con datos de prueba
+5. Validar el mensaje de confirmación de compra
 
-1. Para ejecutar en un navegador específico (e.g., Chromium):
+### ▶️ Ejecución de los Tests
+1. Para ejecutar todos los test (Chromium, Firefox y WebKit):
+   ```
+   npm run pw
+2. Para ejecutar en un navegador específico (e.g., Chromium):
+   ```
     npm run pw -- --project=chromium
-
-2. Para ejecutar en modo visual:
+4. Para ejecutar en modo visual:
+   ```
     npx playwright test --headed
-
-3. Para ejecutar en modo debug:
+6. Para ejecutar en modo debug:
+   ```
     npx playwright test --debug
-
-4. Para generar y abrir el reporte HTML después de la ejecución:
+8. Para generar y abrir el reporte HTML después de la ejecución:
+   ```
     npx playwright show-report
-
-
 ## ⚡ Prueba de Estrés con Artillery (Ejercicio 2)
 
-### Configuración
+### ℹ️ Configuración
 La prueba de estrés se configura en `load-test.yml` para evaluar el endpoint `https://jsonplaceholder.typicode.com/posts`:
 - **Duración**: 1 minuto.
 - **Usuarios concurrentes**: 100.
 - **Reporte**: Generado en formato JSON (`report.json`).
 
-### Ejecución
 
-## Ejecutar la prueba de carga:
+### 🔋 Ejecutar la prueba de carga:
+```
 npm run load-test
+```
 
-## Generar un reporte JSON:
+### 👩‍💻 Generar un reporte JSON:
+```
 npm run load-test-report
+```
 
 
-### Interpretación de los Resultados
+### 🔎 Interpretación de los Resultados
 - RPS: 81 (inferior a 100 por errores).
 
 - Latency: 50.9ms (p95), 70.1ms (p99) para solicitudes exitosas.
@@ -76,7 +91,12 @@ npm run load-test-report
 
 - Solicitudes exitosas: 2237 (37.28%).
 
+
+⚠️
 El endpoint es eficiente (bajas latencias), pero la alta tasa de errores sugiere problemas de red local, límites del cliente o rate limiting del servidor. Se recomienda repetir con arrivalRate: 50 o en un entorno mejor.
 
 #### **Notas adicionales**
-El archivo `report.json` no se ha incluido intencionadamente
+El archivo `report.json` no se ha incluido intencionadamente en el .gitignore
+
+## 🧪 Test Plan (Ejercicio 3)
+Se ha creado un plan de pruebas para la funcionalidad de búsqueda avanzada de productos en una tienda online. Consulta los detalles en [`test-plan.md`](./test-plan.md).
