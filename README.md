@@ -36,6 +36,7 @@ Este repositorio contiene un test automatizado desarrollado con **Playwright** e
    ```
     npx playwright install
    ```
+---
 
 ## 🎭 Automatización con Playwright (Ejercicio 1)
 Este ejercicio contiene un test automatizado con Playwright para la aplicación Demo Blaze que realiza las siguientes acciones:
@@ -62,6 +63,9 @@ Este ejercicio contiene un test automatizado con Playwright para la aplicación 
 5. Para generar y abrir el reporte HTML después de la ejecución:
    ```
     npx playwright show-report
+
+---
+
 ## ⚡ Prueba de Estrés con Artillery (Ejercicio 2)
 
 ### 📋 Configuración
@@ -97,6 +101,8 @@ El endpoint es eficiente (bajas latencias), pero la alta tasa de errores sugiere
 
 #### **Notas adicionales**
 El archivo `report.json` no se ha incluido intencionadamente en el .gitignore
+
+---
 
 ## 🧪 Test Plan (Ejercicio 3)
 Se ha creado un plan de pruebas detallado para la funcionalidad de búsqueda avanzada de productos en una tienda online, incluyendo criterios de aceptación en sintaxis Gherkin. Consulta los detalles en `test-plan.md` (./test-plan.md).
